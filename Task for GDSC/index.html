@@ -361,6 +361,29 @@
         const menu = document.querySelector(".mobile-menu");
         menu.classList.remove("active");
       }
+
+      let prevScroll = window.scrollY;
+
+      window.onscroll = function()
+      {
+        let currentScroll = window.scrollY;
+        let nav = document.querySelector(".navbar");
+
+        if(prevScroll < currentScroll)
+        {
+          nav.style.top = "-100px";
+        }
+
+        else
+        {
+          nav.style.top = "5px";
+        }
+
+        prevScroll = currentScroll;
+
+      }
+
+
     </script>
   </body>
 </html>
